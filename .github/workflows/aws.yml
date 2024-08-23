@@ -8,8 +8,6 @@ on:
 env:
   AWS_REGION: ap-south-1
   ECR_REPOSITORY: sumit
-  CLUSTER_NAME: my-cluster
-  SERVICE_NAME: my-service
   BUILD_NUMBER: ${{ github.run_number }}
 
 jobs:

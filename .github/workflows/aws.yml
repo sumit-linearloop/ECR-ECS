@@ -55,3 +55,8 @@ jobs:
       - name: Update ECS Service
         run: |
           aws ecs update-service --cluster ${{ env.CLUSTER_NAME }} --service ${{ env.SERVICE_NAME }} --force-new-deployment --region ${{ env.AWS_REGION }}
+        
+      - name: Rollback ECS Service to Previous Task Definition
+        if: failure()  # Only execute if the deployment fails
+        run: |
+          aws ecs update-service --cluster ${{ env.CLUSTER_NAME }} --service ${{ env.SERVICE_NAME }} --task-definition ${{ env.PREVIOUS_TASK_DEFINITION_ARN }} --region ${{ env.AWS_REGION }}

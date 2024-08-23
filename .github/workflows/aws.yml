@@ -9,6 +9,9 @@ env:
   AWS_REGION: ap-south-1
   ECR_REPOSITORY: sumit
   BUILD_NUMBER: ${{ github.run_number }}
+  CLUSTER_NAME: sumit-cluster
+  SERVICE_NAME: sumit-services 
+
 
 jobs:
   deploy:

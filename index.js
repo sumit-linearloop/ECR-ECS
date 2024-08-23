@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.get('/', (req, res) => {
-  res.send(`Hello DevOps hello ECR,ECS ! in ${process.env.NODE_ENV}`);
+  res.send(`Hello DevOps ! in ${process.env.NODE_ENV}`);
 });
 
 

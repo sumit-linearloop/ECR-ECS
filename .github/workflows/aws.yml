@@ -35,7 +35,7 @@ jobs:
 
       - name: Tag Docker image with build number
         run: |
-          docker tag sumit:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ env.BUILD_NUMBER }}
+          docker tag sumit:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}
 
       - name: Push Docker image to ECR
         run: |
